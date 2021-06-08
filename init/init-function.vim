@@ -90,6 +90,10 @@ nnoremap <c-c> :call ChineseAboveCount()<cr>
 inoremap <c-c> :call ChineseAboveCount()<cr>
 "https://www.zhihu.com/question/54118781/answer/137982087
 
+function! SequentialNumber()
+  :'<,'>s/^/\=line('.')-1 /
+endfunction
+
 
 " ===
 " === example
