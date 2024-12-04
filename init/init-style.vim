@@ -24,7 +24,11 @@ set relativenumber
 set cursorline
 
 " 总是显示侧边栏（用于显示 mark/gitdiff/诊断信息）
-set signcolumn=yes
+"https://stackoverflow.com/a/6497090/13033234
+autocmd Filetype man let b:not_signcolumn='true'
+if exists("b:not_signcolumn")
+    set signcolumn=yes
+endif
 
 " 总是显示标签栏
 set showtabline=2
