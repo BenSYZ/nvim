@@ -102,9 +102,9 @@ function! ChineseAboveCount()
 	silent exec 'normal! '
 endfunc
 
-vnoremap <c-c> :call ChineseCount()<cr>
-nnoremap <c-c> :call ChineseAboveCount()<cr>
-inoremap <c-c> :call ChineseAboveCount()<cr>
+"vnoremap <c-c> :call ChineseCount()<cr>
+"nnoremap <c-c> :call ChineseAboveCount()<cr>
+"inoremap <c-c> :call ChineseAboveCount()<cr>
 "https://www.zhihu.com/question/54118781/answer/137982087
 
 function! SequentialNumber()
