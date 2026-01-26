@@ -89,6 +89,7 @@ if index(g:bundle_group, 'basic') >= 0
 	"Plug 'b-boogaard/ShowMarks'
 	Plug 'BenSYZ/vim-signature'
 	"Plug 'vim-scripts/Visual-Mark'
+	Plug 'jyelloz/vim-dts-indent'
 
 	" 用于在侧边符号栏显示 git/svn 的 diff
 	Plug 'mhinz/vim-signify'
