@@ -35,3 +35,46 @@ endsnippet
 snippet scd "shellcheck ignore" A
 # shellcheck disable=$0
 endsnippet
+
+snippet scs "shellcheck source" A
+# shellcheck source=$0
+endsnippet
+
+snippet apt_list "apt get package version" i
+apt list --installed $1 2>/dev/null | awk -v FS='[/ ]' '\$1=="$1" {print \$3}'
+endsnippet
+
+# grep -Ev '^#*TEST BEGIN' scripts.sh | sed -n 's/^ *//; /TEST BEGIN/,/TEST END/p; /TEST END/ {n; s/^ *//p}'
+snippet test "test doc" i
+#################### TEST BEGIN ####################
+# Expected behavior:
+#     $0
+# Result:
+#     * [ ] TODO
+#     * [ ] FIXED
+#     * [ ] FAILED
+#     * [ ] PASS
+#################### TEST END   ####################
+endsnippet
+snippet testr "test doc result" i
+#     * [ ] TODO
+#     * [ ] FIXED
+#     * [ ] FAILED
+#     * [ ] PASS
+endsnippet
+
+snippet pipe "pipeline status" i
+#{ echo foo; exit 18; } | grep bar
+#echo ${PIPESTATUS[0]} ${PIPESTATUS[1]}
+#var=$({ echo foo; exit 18; } | grep bar; exit $((${PIPESTATUS[0]}+${PIPESTATUS[1]})))
+endsnippet
+
+snippet main "main function" i
+#!/bin/bash
+main(){
+    $0
+    return 0
+}
+main "$@"
+endsnippet
+
