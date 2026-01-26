@@ -224,8 +224,21 @@ if index(g:bundle_group, 'enhanced') >= 0
 	"==
 	"==  undotree
 	"==============
+	" :help undotree.txt
 	Plug 'mbbill/undotree'
-	nnoremap L :UndotreeToggle<CR>
+	nnoremap L :UndotreeToggle<CR><C-w>h
+	"let g:undotree_WindowLayout = 3
+	let g:undotree_SplitWidth   = 40
+	"let g:undotree_TreeNodeShape   = ""
+	"let g:undotree_TreeReturnShape = "╲"
+	"let g:undotree_TreeVertShape   = "│"
+	"let g:undotree_TreeSplitShape  = "╱"
+
+	function g:Undotree_CustomMap()
+		setlocal nofoldenable
+		nnoremap <buffer> N <plug>UndotreeNextState
+		nnoremap <buffer> E <plug>UndotreePreviousState
+	endfunc
 
 	" ===
 	" === vim-subversive
