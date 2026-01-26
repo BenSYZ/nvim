@@ -168,7 +168,8 @@ autocmd Filetype markdown nnoremap <C-f> : call InkscapeForMarkdown()<CR><CR>
 " ===
 " === other
 " ==========
-inoremap <C-S-f> <Esc>:silent !~/.config/nvim/scripts/screenshot.sh <cfile><CR>
+nnoremap <space>s <Esc>:r ! ~/.config/nvim/scripts/screenshot.sh <cfile><CR>
+nnoremap <Bslash>s <Esc>:r !~/.config/nvim/scripts/screenshot_inotify.sh<CR>
 "noremap <C-s> <Esc>:silent !~/.config/nvim/scripts/adb.sh<CR>p
 
 
