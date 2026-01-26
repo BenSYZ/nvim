@@ -1,9 +1,10 @@
 snippet main "if main" b
+import sys
 def main():
     $0
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
 endsnippet
 
 snippet d "if main" w
