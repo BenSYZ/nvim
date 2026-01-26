@@ -481,15 +481,15 @@ if index(g:bundle_group, 'coc') >= 0
 	nmap <silent> gi <Plug>(coc-implementation)
 	nmap <silent> gr <Plug>(coc-references)
 
-        " Remap <C-f> and <C-b> to scroll float windows/popups
-        if has('nvim-0.4.0') || has('patch-8.2.0750')
-          nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-          nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-          inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-          inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-          vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-          vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-        endif
+	" Remap <C-f> and <C-b> to scroll float windows/popups
+	if has('nvim-0.4.0') || has('patch-8.2.0750')
+	    nnoremap <silent><nowait><expr> <c-n> coc#float#has_scroll() ? coc#float#scroll(1) : "<c-n>"
+	    nnoremap <silent><nowait><expr> <c-e> coc#float#has_scroll() ? coc#float#scroll(0) : "<c-e>"
+	    inoremap <silent><nowait><expr> <c-n> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "<c-n>"
+	    inoremap <silent><nowait><expr> <c-e> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "<c-e>"
+	    vnoremap <silent><nowait><expr> <c-n> coc#float#has_scroll() ? coc#float#scroll(1) : "<c-n>"
+	    vnoremap <silent><nowait><expr> <c-e> coc#float#has_scroll() ? coc#float#scroll(0) : "<c-e>"
+	endif
 
 	" coc-json(jsonc.vim)
 	" --------
