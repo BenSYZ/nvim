@@ -11,6 +11,13 @@ int main(int argc, char *argv[]){
 }
 endsnippet
 
+snippet f "function" b
+int $1(){
+	$0
+	return 0;
+}
+endsnippet
+
 snippet malloc "malloc" i
 ${1:int} *p = ($1 *) malloc(sizeof($1));
 endsnippet

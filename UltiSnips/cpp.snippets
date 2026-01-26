@@ -1,24 +1,8 @@
-#include <iostream>
-#using namespace std;
-#int main(){
-#    $0
-#    return 0;
-#}
-snippet temp "tepmlate" i
-#include <iostream>
-#include <thread>
-int main(){
-    
-    return 0;
-}
-endsnippet
-snippet sep "learn cpp seperate sub section" i
-cout << "\n===== Scientific Number =====\n";
-endsnippet
+extends c
 
-snippet f "function" i
-(){
+snippet template "template" i
+template <typename ${1:T}> ${2:int} ${3:fn}($1 $4){
     $0
-    ${1:return 0;}
+    return 0;
 }
 endsnippet
