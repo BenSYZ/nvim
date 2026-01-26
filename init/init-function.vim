@@ -191,3 +191,8 @@ autocmd Filetype markdown nnoremap <space>b Bi**<Esc>Ea**<Esc>
 autocmd Filetype markdown nnoremap <space>z i✰<Esc>
 "autocmd Filetype tex,markdown inoremap .<space> .<CR>
 "
+
+vnoremap T :w !~/.config/i3/scripts/translate.sh 2>/dev/null<cr>
+" TODO: call CompileRunGcc accounding to section type in markdown, now default to shell
+"autocmd Filetype sh vnoremap r :w !bash<cr>
+vnoremap R :w !bash<cr>
