@@ -388,6 +388,15 @@ if index(g:bundle_group, 'airline') >= 0
 	let g:airline#extensions#fugitiveline#enabled = 0
 	let g:airline#extensions#csv#enabled = 0
 	let g:airline#extensions#vimagit#enabled = 0
+	" https://github.com/vim-airline/vim-airline/issues/2704#issuecomment-2673900706
+	"let g:airline#extensions#whitespace#symbol = '!'
+	let g:airline#extensions#whitespace#enabled = 0
+	"Plug 'itchyny/lightline.vim'
+	"let g:lightline = {
+	"      \ 'active': {
+	"      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+	"      \ }
+	"      \ }
 endif
 
 
