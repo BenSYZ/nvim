@@ -78,7 +78,7 @@ tnoremap <Esc> <C-\><C-n>
 
 " C-a num++ c-x num--
 "nnoremap <C-a> 0
-nnoremap <C-e> $
+"nnoremap <C-e> $
 nnoremap S :w<CR>
 nnoremap Q :q<CR>
 nnoremap <space>R :source $MYVIMRC<CR>

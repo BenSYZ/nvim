@@ -264,18 +264,18 @@ if index(g:bundle_group, 'enhanced') >= 0
 	"let g:VM_maps["Undo"] = 'l'
 	"let g:VM_maps["Redo"] = '<C-r>'
 
-	Plug 'terryma/vim-multiple-cursors'
-	let g:multi_cursor_use_default_mapping=0
+	"Plug 'terryma/vim-multiple-cursors'
+	"let g:multi_cursor_use_default_mapping=0
 
-	" Default mapping
-	let g:multi_cursor_start_word_key      = '<C-n>'
-	let g:multi_cursor_select_all_word_key = '<A-n>'
-	let g:multi_cursor_start_key           = 'g<C-n>'
-	let g:multi_cursor_select_all_key      = 'g<A-n>'
-	let g:multi_cursor_next_key            = '<C-n>'
-	let g:multi_cursor_prev_key            = '<C-p>'
-	let g:multi_cursor_skip_key            = '<C-x>'
-	let g:multi_cursor_quit_key            = '<Esc>'
+	"" Default mapping
+	"let g:multi_cursor_start_word_key      = '<C-n>'
+	"let g:multi_cursor_select_all_word_key = '<A-n>'
+	"let g:multi_cursor_start_key           = 'g<C-n>'
+	"let g:multi_cursor_select_all_key      = 'g<A-n>'
+	"let g:multi_cursor_next_key            = '<C-n>'
+	"let g:multi_cursor_prev_key            = '<C-p>'
+	"let g:multi_cursor_skip_key            = '<C-x>'
+	"let g:multi_cursor_quit_key            = '<Esc>'
 
 	" Auto format Chinese and English
 	Plug 'hotoo/pangu.vim'
