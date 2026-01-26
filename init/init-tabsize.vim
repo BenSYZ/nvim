@@ -36,6 +36,29 @@ set expandtab
 au FileType html set shiftwidth=2
 au FileType dts,c,cpp,gitconfig set shiftwidth=8 | set noexpandtab | set tabstop=8
 au FileType sh,gitcommit set shiftwidth=4 | set expandtab
+" Function to detect if the file uses expandtab or not
+function! DetectExpandTab()
+  if !&modifiable
+    return
+  endif
+  " Search the first 1000 lines for a tab character
+  let l:tab_found = search('^\t', 'n', 1000)
+  if l:tab_found > 0
+    " Tab character found, use noexpandtab
+    set noexpandtab
+  else
+    " No tab character found, use expandtab
+    " restore to default
+    set expandtab
+    set shiftwidth=4
+  endif
+endfunction
+
+" Auto-detect expandtab setting for C files
+augroup AutoExpandTab
+  autocmd!
+  autocmd BufReadPost,BufNewFile *.c call DetectExpandTab()
+augroup END
 
 func! Toggle_tab_style()
     if &shiftwidth == 8
