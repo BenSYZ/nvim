@@ -5,3 +5,41 @@ snippet box "Box"
 `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
 $0
 endsnippet
+
+
+global !p
+comment_template = {
+    "sh":  [ "#",  "#",  "#"   ],
+    "c":   [ "/*", " *", " */" ],
+    "cpp": [ "/*", " *", " */" ],
+}
+def comment_head():
+    return comment_template.get(snip.ft, [ "", "", "" ])[0]
+    ret_string = ''
+    #return ret_string
+def comment_body():
+    return comment_template.get(snip.ft, [ "", "", "" ])[1]
+def comment_foot():
+    return comment_template.get(snip.ft, [ "", "", "" ])[2]
+endglobal
+
+snippet gpl "gpl" i
+`!p snip.rv=comment_head()`
+`!p snip.rv=comment_body()` SPDX-License-Identifier: LGPL-2.1-or-later
+`!p snip.rv=comment_body()`
+`!p snip.rv=comment_body()` ${1:<one line to give the library's name and an idea of what it does.>}
+`!p snip.rv=comment_body()`
+`!p snip.rv=comment_body()` Copyright (C) `date +%Y` Ben Song <bensongsyz@gmail.com>
+`!p snip.rv=comment_body()`
+`!p snip.rv=comment_body()` This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
+`!p snip.rv=comment_body()`
+`!p snip.rv=comment_body()` This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+`!p snip.rv=comment_body()`
+`!p snip.rv=comment_body()` You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA `!p snip.rv=comment_foot()`
+$0
+endsnippet
+
+snippet bn "ben notes:" i
+`!p snip.rv=comment_head()` Ben Notes: $0 `!p snip.rv=comment_foot()`
+endsnippet
+
