@@ -51,7 +51,7 @@
             "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
             //Unlike VSCode vim doesn't have workspace support. The solution is resolve workspace folders from opened files.
             //"args": ["--log-file=/tmp/ccls.log", "-v", "3"],
-            "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "rootPatterns": [".ccls", "compile_commands.json"], //, ".vim/", ".git/", ".hg/"
             "initializationOptions": {
                 "cache": {
                     "directory": "${env:HOME}/.cache/ccls"
@@ -65,10 +65,14 @@
     },
     // pyright
     //"python.venvPath": "~/.venv",
+    //  # pyright: ignore
 
     //pyright
     "pyright.inlayHints.variableTypes": false,
     "pyright.inlayHints.parameterTypes": false,
+
+    // rust
+    "rust-analyzer.inlayHints.typeHints.enable": false,
 
     // coc-settings.json
     "explorer.keyMappings.global": {
@@ -136,4 +140,10 @@
         "<<": "gitStage",
         ">>": "gitUnstage"
     },
+    //"rust-analyzer.enable": true,
+    "workspace.ignoredFolders": [
+    //  "$HOME",
+    //  "$HOME/.cargo/**",
+    //  "$HOME/.rustup/**"
+    ],
 }
