@@ -11,25 +11,28 @@ func! CompileRunGcc()
     set splitbelow
     :sp
     ":term gcc -lpthread '%' -o '%<' && time ./'%<'
-    :term [ -e Makefile ] && make || gcc -lpthread '%' -o '%<' && time ./'%<'
+    ":term [ -e Makefile ] && make || {gcc -g -lpthread '%' -o '%<' && time ./'%<'}
+    :term [ -e Makefile ] && make || {gcc -g -lpthread '%' -o '%<' && gdb -ex "set debuginfod enabled off" -ex run -ex bt -ex quit ./'%<'}
   elseif &filetype == 'cpp'
     "exec "!g++ -lpthread '%' -o '%<' && time ./'%<'"
     set splitbelow
     :sp
-    :term [ -e Makefile ] && make || g++ -lpthread '%' -o '%<' && time ./'%<'
+    :term [ -e Makefile ] && make || {g++ -g -lpthread '%' -o '%<' && time ./'%<'}
   elseif &filetype == 'rust'
     exec "!time cargo run"
   elseif &filetype == 'java'
     exec "!javac %"
     exec "!time java %<"
   elseif &filetype == 'sh'
-    :!time sh %
+    exec "!chmod +x '%'"
+    :!time ./'%'
   elseif &filetype == 'zsh'
-    :!time zsh %
+    exec "!chmod +x '%'"
+    :!time ./'%'
   elseif &filetype == 'python'
     set splitbelow
     :sp
-    :term time python3 %
+    :term time python3 '%'
   elseif &filetype == 'lua'
     :!time lua %
   elseif &filetype == 'html'
