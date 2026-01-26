@@ -5,10 +5,14 @@ endglobal
 
 snippet main "main" i
 #include <stdio.h>
-int main(){
+int main(int argc, char *argv[]){
 	$0
 	return 0;
 }
+endsnippet
+
+snippet malloc "malloc" i
+${1:int} *p = ($1 *) malloc(sizeof($1));
 endsnippet
 
 snippet printfd "printf int" i
@@ -23,7 +27,7 @@ endsnippet
 #printk(KERN_ERR"ben $1 func:%s,line:%d\n", __func__, __LINE__);
 #endsnippet
 
-snippet 'dev_(err|dbg|info)' "dev_debug" ri
+snippet 'dev_(err|warn|dbg|info)' "dev_debug" ri
 dev_`!p snip.rv = match.group(1)`(${1:&pdev->dev}, "ben: %s, L:%d: ${2:%s}\n",
 	__func__, __LINE__,
 	$0);
