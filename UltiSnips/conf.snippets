@@ -1,0 +1,14 @@
+snippet sec "section" i
+`!p snip.rv = '#' + '#' * (len(t[1]) + 2) + '#'`
+# $1 #
+`!p snip.rv = '#' + '#' * (len(t[1]) + 2) + '#'`
+$0
+endsnippet
+
+snippet '^(CONFIG_[A-Z]*) ' "disable config" riA
+`!p snip.rv = '# ' + match.group(1) + ' is not set'`$0
+endsnippet
+
+snippet '^# (CONFIG_[A-Z]*) is not set ' "enable config" riA
+`!p snip.rv = match.group(1)`$0
+endsnippet
