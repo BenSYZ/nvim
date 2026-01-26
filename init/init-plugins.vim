@@ -354,9 +354,9 @@ if index(g:bundle_group, 'markdown') >= 0
 	function! g:Open_browser(url)
 		"show url
 		"exe '!echo ' . a:url . "&"
-		silent exe '!firefox ' . a:url . "&"
+		"silent exe '!firefox ' . a:url . "&"
 		"silent exe '!chromium --app=' . a:url
-		"silent exec "chromium --app=" . a:url . " &"
+		silent exec "!chromium --app=" . a:url . " &"
 	endfunction
 
 	"autocmd Filetype markdown nnoremap <space>C :silent !chromium&<CR>:MarkdownPreview<CR>
